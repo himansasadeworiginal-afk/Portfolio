@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — K. Himansa Sadew Aloka
 
-## Getting Started
+Personal portfolio website built with Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion, and GSAP.
 
-First, run the development server:
+## Tech Stack
+
+- **Next.js 16** (App Router, Turbopack, static export)
+- **React 19** + **TypeScript**
+- **Tailwind CSS v4** — utility-first styling
+- **Framer Motion** — scroll animations, carousel, mobile menu
+- **GSAP** — timeline gold line draw effect
+- **Lucide React** — icons
+- **Formspree** — contact form backend
+
+## Sections
+
+Hero, About, Skills, Projects, Experience, Services, Testimonials, Contact
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Static output goes to `out/`.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Pushing to `main` triggers GitHub Actions to build and deploy to GitHub Pages.  
+The workflow is defined in `.github/workflows/deploy.yml`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All content is managed in a single file: `src/data/portfolio.ts`
