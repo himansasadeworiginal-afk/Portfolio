@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" rx="12" fill="#1A1A1A"/>
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#F5D060"/>
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="200" cy="200" r="100"/>
+    </clipPath>
+  </defs>
+  <circle cx="200" cy="200" r="104" fill="none" stroke="#D4AF37" stroke-width="4"/>
+  <circle cx="200" cy="200" r="100" fill="#0A0A0A"/>
+  <circle cx="200" cy="200" r="100" fill="url(#gold)" clip-path="url(#circle)" opacity="0.1"/>
+  <text x="200" y="218" font-family="serif" font-size="56" font-weight="700" fill="url(#gold)" text-anchor="middle" dominant-baseline="middle">HA</text>
+  <line x1="80" y1="345" x2="320" y2="345" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="200" y="380" font-family="sans-serif" font-size="14" fill="#A0A0A0" text-anchor="middle">Front-End Web Designer &amp; Developer</text>
+</svg>
