@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <g id="wolf-head">
+    <path id="head-outer" d="M60 10 L38 30 L20 45 L28 80 L18 110 L40 115 L60 120 L80 115 L102 110 L92 80 L100 45 L82 30 Z" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+    <path id="head-inner" d="M60 50 L44 70 L42 96 L60 102 L78 96 L76 70 Z" stroke="#D4AF37" stroke-width="1" fill="none"/>
+    <circle id="head-eye-left" cx="46" cy="72" r="4" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+    <circle id="head-eye-right" cx="74" cy="72" r="4" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+    <path id="head-nose" d="M56 92 L60 97 L64 92 L60 94 Z" stroke="#D4AF37" stroke-width="0.8"/>
+    <path id="head-ears" d="M38 30 L28 12 L48 24 M82 30 L92 12 L72 24" stroke="#D4AF37" stroke-width="1"/>
+  </g>
+</svg>

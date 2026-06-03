@@ -19,13 +19,15 @@ export const portfolio = {
     phone: "+94 78 333 2095",
     location: "Colombo, Sri Lanka",
     social: {
-      github: "https://github.com/[YOUR_GITHUB]",
-      linkedin: "https://linkedin.com/in/[YOUR_LINKEDIN]",
-      twitter: "https://twitter.com/[YOUR_TWITTER]",
+      github: "https://github.com/himansasadeworiginal-afk",
+      linkedin: "https://linkedin.com/in/himansa-sadew-aloka",
+      twitter: "https://twitter.com/himansasadew",
     },
     resumeUrl: "/resume.pdf",
     profileImage: "/profile.svg",
     available: true,
+    githubUsername: "himansasadeworiginal-afk",
+    currentlyBuilding: ["Shopify Custom App", "Next.js Dashboard", "Portfolio 2.0"],
   },
 
   stats: [
@@ -86,8 +88,10 @@ export const portfolio = {
       tags: ["Shopify", "Full-Stack", "eCommerce"],
       image: "/projects/luxora.svg",
       liveUrl: "https://[project-url].com",
-      codeUrl: "https://github.com/[YOUR_GITHUB]/luxora",
+      codeUrl: "https://github.com/himansasadeworiginal-afk/luxora",
       featured: true,
+      slug: "luxora-ecommerce",
+      caseStudyAvailable: true,
     },
     {
       title: "ZenSpa Booking System",
@@ -95,8 +99,10 @@ export const portfolio = {
       tags: ["React", "Full-Stack", "PHP"],
       image: "/projects/zenspa.svg",
       liveUrl: "https://[project-url].com",
-      codeUrl: "https://github.com/[YOUR_GITHUB]/zenspa",
+      codeUrl: "https://github.com/himansasadeworiginal-afk/zenspa",
       featured: false,
+      slug: "zenspa-booking",
+      caseStudyAvailable: true,
     },
     {
       title: "Agency Portfolio — DesignWave",
@@ -104,8 +110,10 @@ export const portfolio = {
       tags: ["React", "SEO"],
       image: "/projects/designwave.svg",
       liveUrl: "https://[project-url].com",
-      codeUrl: "https://github.com/[YOUR_GITHUB]/designwave",
+      codeUrl: "https://github.com/himansasadeworiginal-afk/designwave",
       featured: false,
+      slug: "designwave-agency",
+      caseStudyAvailable: true,
     },
     {
       title: "Analytics Dashboard Pro",
@@ -113,8 +121,10 @@ export const portfolio = {
       tags: ["React", "Full-Stack"],
       image: "/projects/analytics.svg",
       liveUrl: "https://[project-url].com",
-      codeUrl: "https://github.com/[YOUR_GITHUB]/analytics-pro",
+      codeUrl: "https://github.com/himansasadeworiginal-afk/analytics-pro",
       featured: false,
+      slug: "analytics-dashboard",
+      caseStudyAvailable: false,
     },
     {
       title: "FoodieExpress API",
@@ -122,8 +132,10 @@ export const portfolio = {
       tags: ["PHP", "Full-Stack"],
       image: "/projects/foodie.svg",
       liveUrl: "https://[project-url].com",
-      codeUrl: "https://github.com/[YOUR_GITHUB]/foodie-api",
+      codeUrl: "https://github.com/himansasadeworiginal-afk/foodie-api",
       featured: false,
+      slug: "foodie-express",
+      caseStudyAvailable: false,
     },
     {
       title: "SEO Optimisation Suite",
@@ -131,8 +143,10 @@ export const portfolio = {
       tags: ["SEO", "Full-Stack"],
       image: "/projects/seo-suite.svg",
       liveUrl: "https://[project-url].com",
-      codeUrl: "https://github.com/[YOUR_GITHUB]/seo-suite",
+      codeUrl: "https://github.com/himansasadeworiginal-afk/seo-suite",
       featured: false,
+      slug: "seo-suite",
+      caseStudyAvailable: false,
     },
   ],
 
@@ -213,13 +227,13 @@ export const portfolio = {
 
   testimonials: [
     {
-      quote: "Working with Alex transformed our online store. Our conversion rate jumped 35% in the first month after the redesign. The attention to detail and performance optimisation was remarkable.",
+      quote: "Working with Himansa transformed our online store. Our conversion rate jumped 35% in the first month after the redesign. The attention to detail and performance optimisation was remarkable.",
       author: "Sarah Mitchell",
       company: "CEO, Luxora Fashion",
       rating: 5,
     },
     {
-      quote: "Alex delivered a complex booking platform on time and under budget. The codebase is clean, well-documented, and has been rock-solid in production handling thousands of daily users.",
+      quote: "Himansa delivered a complex booking platform on time and under budget. The codebase is clean, well-documented, and has been rock-solid in production handling thousands of daily users.",
       author: "James Rodrigo",
       company: "CTO, ZenSpa Group",
       rating: 5,
@@ -231,7 +245,7 @@ export const portfolio = {
       rating: 5,
     },
     {
-      quote: "I've worked with many developers, but Alex stands out for their ability to understand business requirements and translate them into elegant technical solutions. A true professional.",
+      quote: "I've worked with many developers, but Himansa stands out for their ability to understand business requirements and translate them into elegant technical solutions. A true professional.",
       author: "Michael Chen",
       company: "Founder, TechBridge Solutions",
       rating: 5,

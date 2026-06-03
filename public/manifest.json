@@ -1,0 +1,23 @@
+{
+  "name": "K. Himansa Sadew Aloka — Front-End Web Designer & Developer",
+  "short_name": "Himansa Portfolio",
+  "description": "Front-End Developer with 5+ years of freelance experience building modern, responsive, and interactive websites.",
+  "start_url": "/Portfolio/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "/Portfolio/wolf-head.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Portfolio/wolf-head.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

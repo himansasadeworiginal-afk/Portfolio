@@ -4,8 +4,10 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Star } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 export default function TestimonialsCarousel() {
+  const prefersReduced = useReducedMotion();
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -39,10 +41,10 @@ export default function TestimonialsCarousel() {
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
-          initial={{ opacity: 0, x: 40 }}
+          initial={prefersReduced ? { opacity: 1 } : { opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -40 }}
-          transition={{ duration: 0.4 }}
+          exit={prefersReduced ? { opacity: 1 } : { opacity: 0, x: -40 }}
+          transition={{ duration: prefersReduced ? 0 : 0.4 }}
           className="bg-bg-elevated border border-border-subtle rounded-lg p-10"
         >
           <Quote size={48} className="text-gold-primary/30 mb-6" />

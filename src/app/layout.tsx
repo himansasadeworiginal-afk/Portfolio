@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import WolfPreloader from "@/components/wolf-preloader";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -54,8 +55,18 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <meta name="theme-color" content="#D4AF37" />
+        <link rel="manifest" href="/Portfolio/manifest.json" />
+        <link rel="preconnect" href="https://api.github.com" />
+        <script dangerouslySetInnerHTML={{
+          __html: `(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"}if(t==="light"){document.documentElement.classList.add("light")}}catch(e){}})()`,
+        }} />
+      </head>
       <body className="min-h-full">
+        <WolfPreloader />
         <div className="noise-overlay" aria-hidden="true" />
         {children}
       </body>
