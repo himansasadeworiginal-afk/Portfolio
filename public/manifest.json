@@ -8,15 +8,15 @@
   "theme_color": "#D4AF37",
   "icons": [
     {
-      "src": "/Portfolio/wolf-head.svg",
+      "src": "/Portfolio/logo1.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/Portfolio/wolf-head.svg",
+      "src": "/Portfolio/logo1.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]

@@ -23,7 +23,7 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [eyeGlow, setEyeGlow] = useState(false);
+  const [logoGlow, setLogoGlow] = useState(false);
   const [easterEgg, setEasterEgg] = useState(false);
   const playHowl = useSynthHowl();
   const { isDark, toggleTheme } = useTheme();
@@ -56,42 +56,18 @@ export default function Navigation() {
           <a
             href="#"
             className="flex items-center gap-3 group"
-            onMouseEnter={() => setEyeGlow(true)}
-            onMouseLeave={() => setEyeGlow(false)}
+            onMouseEnter={() => setLogoGlow(true)}
+            onMouseLeave={() => setLogoGlow(false)}
           >
             <div className="relative">
-              <svg
-                viewBox="0 0 120 120"
-                className="w-8 h-8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M60 10 L38 30 L20 45 L28 80 L18 110 L40 115 L60 120 L80 115 L102 110 L92 80 L100 45 L82 30 Z"
-                  stroke="#D4AF37"
-                  strokeWidth="1.5"
-                />
-                <path d="M60 50 L44 70 L42 96 L60 102 L78 96 L76 70 Z" stroke="#D4AF37" strokeWidth="1" />
-                <circle
-                  cx="46"
-                  cy="72"
-                  r="3"
-                  stroke="#D4AF37"
-                  strokeWidth="1.5"
-                  className={`transition-all duration-300 ${eyeGlow || easterEgg ? "fill-gold-primary" : "fill-none"}`}
-                  style={eyeGlow || easterEgg ? { filter: "drop-shadow(0 0 6px #D4AF37)" } : undefined}
-                />
-                <circle
-                  cx="74"
-                  cy="72"
-                  r="3"
-                  stroke="#D4AF37"
-                  strokeWidth="1.5"
-                  className={`transition-all duration-300 ${eyeGlow || easterEgg ? "fill-gold-primary" : "fill-none"}`}
-                  style={eyeGlow || easterEgg ? { filter: "drop-shadow(0 0 6px #D4AF37)" } : undefined}
-                />
-                <path d="M38 30 L28 12 L48 24 M82 30 L92 12 L72 24" stroke="#D4AF37" strokeWidth="1" />
-              </svg>
+              <img
+                src="/Portfolio/logo1.png"
+                alt="Logo"
+                className="w-8 h-8 object-contain transition-all duration-300"
+                style={{
+                  filter: logoGlow || easterEgg ? "drop-shadow(0 0 6px #D4AF37)" : "none",
+                }}
+              />
               {easterEgg && (
                 <div className="absolute -top-2 -left-2 -right-2 -bottom-2 pointer-events-none">
                   <div className="absolute inset-0 bg-gold-primary/20 rounded-full animate-ping" />

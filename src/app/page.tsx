@@ -164,31 +164,17 @@ export default function Home() {
             className="absolute inset-0 flex items-center justify-center pointer-events-none"
             style={{
               zIndex: 2,
-              filter: "brightness(1.5) sepia(1) saturate(3) hue-rotate(5deg)",
+              filter: "brightness(0.8) sepia(1) saturate(2) hue-rotate(5deg)",
             }}
           >
-            <svg
-              viewBox="0 0 512 512"
-              className="w-[70vh] h-[70vh] opacity-[0.06]"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <img
+              src="/Portfolio/logo1.png"
+              alt=""
+              className="w-[70vh] h-[70vh] object-contain opacity-[0.06]"
               style={{
                 animation: "wolfBreathe 4s ease-in-out infinite",
               }}
-            >
-              <g id="hero-wolf">
-                <path d="M256 40 L160 120 L80 160 L100 240 L60 340 L120 400 L180 460 L256 480 L332 460 L392 400 L452 340 L412 240 L432 160 L352 120 Z" stroke="#D4AF37" strokeWidth="2" />
-                <path d="M160 120 L120 40 L200 100 M352 120 L392 40 L312 100" stroke="#D4AF37" strokeWidth="2" />
-                <path d="M256 180 L196 220 L180 300 L220 360 L256 380 L292 360 L332 300 L316 220 Z" stroke="#D4AF37" strokeWidth="1.5" />
-                <path d="M240 340 L256 360 L272 340" stroke="#D4AF37" strokeWidth="1" />
-                <ellipse cx="216" cy="240" rx="14" ry="16" stroke="#D4AF37" strokeWidth="2" />
-                <ellipse cx="296" cy="240" rx="14" ry="16" stroke="#D4AF37" strokeWidth="2" />
-                <circle cx="216" cy="240" r="6" fill="#D4AF37" />
-                <circle cx="296" cy="240" r="6" fill="#D4AF37" />
-                <path d="M160 160 L120 140 L140 180 M352 160 L392 140 L372 180 M120 260 L90 250 L110 290 M392 260 L422 250 L402 290" stroke="#D4AF37" strokeWidth="1" opacity="0.6" />
-                <path d="M220 360 L200 390 M292 360 L312 390" stroke="#D4AF37" strokeWidth="1.5" />
-              </g>
-            </svg>
+            />
           </div>
 
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -492,23 +478,11 @@ export default function Home() {
             className="absolute right-[-10%] top-0 h-full flex items-center pointer-events-none z-0"
             style={{ animation: "wolfRotate 120s linear infinite" }}
           >
-            <svg
-              viewBox="0 0 512 512"
-              className="h-full max-h-[600px] w-auto opacity-[0.04]"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="contact-wolf">
-                <path d="M256 40 L160 120 L80 160 L100 240 L60 340 L120 400 L180 460 L256 480 L332 460 L392 400 L452 340 L412 240 L432 160 L352 120 Z" stroke="#D4AF37" strokeWidth="2" />
-                <path d="M160 120 L120 40 L200 100 M352 120 L392 40 L312 100" stroke="#D4AF37" strokeWidth="2" />
-                <path d="M256 180 L196 220 L180 300 L220 360 L256 380 L292 360 L332 300 L316 220 Z" stroke="#D4AF37" strokeWidth="1.5" />
-                <path d="M240 340 L256 360 L272 340" stroke="#D4AF37" strokeWidth="1" />
-                <ellipse cx="216" cy="240" rx="14" ry="16" stroke="#D4AF37" strokeWidth="2" />
-                <ellipse cx="296" cy="240" rx="14" ry="16" stroke="#D4AF37" strokeWidth="2" />
-                <circle cx="216" cy="240" r="6" fill="#D4AF37" />
-                <circle cx="296" cy="240" r="6" fill="#D4AF37" />
-              </g>
-            </svg>
+            <img
+              src="/Portfolio/logo1.png"
+              alt=""
+              className="h-full max-h-[600px] w-auto object-contain opacity-[0.04]"
+            />
           </div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
