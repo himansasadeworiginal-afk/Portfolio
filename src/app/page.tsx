@@ -109,20 +109,6 @@ export default function Home() {
         gsap.registerPlugin(stModule.ScrollTrigger);
 
         ctx = gsap.context(() => {
-          const wolfGhost = document.querySelector("#hero-wolf-ghost");
-          if (wolfGhost) {
-            gsap.to(wolfGhost, {
-              opacity: 0,
-              ease: "none",
-              scrollTrigger: {
-                trigger: "#hero",
-                start: "top top",
-                end: "bottom top",
-                scrub: 1,
-              },
-            });
-          }
-
           const timelineLine = document.querySelector("#timeline-gold-line");
           if (!timelineLine) return;
 
@@ -159,23 +145,7 @@ export default function Home() {
           <HeroScene />
           <MobileHeroParticles />
 
-          <div
-            id="hero-wolf-ghost"
-            className="absolute inset-0 flex items-center justify-center pointer-events-none"
-            style={{
-              zIndex: 2,
-              filter: "brightness(0.8) sepia(1) saturate(2) hue-rotate(5deg)",
-            }}
-          >
-            <img
-              src="/Portfolio/logo1.png"
-              alt=""
-              className="w-[70vh] h-[70vh] object-contain opacity-[0.06]"
-              style={{
-                animation: "wolfBreathe 4s ease-in-out infinite",
-              }}
-            />
-          </div>
+
 
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-8">
@@ -474,16 +444,7 @@ export default function Home() {
 
         {/* CONTACT */}
         <SectionWrapper id="contact" className="py-24 bg-bg-surface relative overflow-hidden">
-          <div
-            className="absolute right-[-10%] top-0 h-full flex items-center pointer-events-none z-0"
-            style={{ animation: "wolfRotate 120s linear infinite" }}
-          >
-            <img
-              src="/Portfolio/logo1.png"
-              alt=""
-              className="h-full max-h-[600px] w-auto object-contain opacity-[0.04]"
-            />
-          </div>
+
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">

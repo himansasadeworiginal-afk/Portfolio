@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { portfolio } from "@/data/portfolio";
-import { useKonamiCode } from "@/hooks/use-konami-code";
-import { useSynthHowl } from "@/hooks/use-synth-howl";
 import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
@@ -23,9 +21,6 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [logoGlow, setLogoGlow] = useState(false);
-  const [easterEgg, setEasterEgg] = useState(false);
-  const playHowl = useSynthHowl();
   const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -33,14 +28,6 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleKonami = useCallback(() => {
-    setEasterEgg(true);
-    playHowl();
-    setTimeout(() => setEasterEgg(false), 1000);
-  }, [playHowl]);
-
-  useKonamiCode(handleKonami);
 
   return (
     <>
@@ -56,25 +43,8 @@ export default function Navigation() {
           <a
             href="#"
             className="flex items-center gap-3 group"
-            onMouseEnter={() => setLogoGlow(true)}
-            onMouseLeave={() => setLogoGlow(false)}
           >
-            <div className="relative">
-              <img
-                src="/Portfolio/logo1.png"
-                alt="Logo"
-                className="w-8 h-8 object-contain transition-all duration-300"
-                style={{
-                  filter: logoGlow || easterEgg ? "drop-shadow(0 0 6px #D4AF37)" : "none",
-                }}
-              />
-              {easterEgg && (
-                <div className="absolute -top-2 -left-2 -right-2 -bottom-2 pointer-events-none">
-                  <div className="absolute inset-0 bg-gold-primary/20 rounded-full animate-ping" />
-                </div>
-              )}
-            </div>
-            <span className="font-heading text-xl gold-gradient-text hidden sm:block">
+            <span className="font-heading text-xl gold-gradient-text">
               {portfolio.personal.initials}
             </span>
           </a>

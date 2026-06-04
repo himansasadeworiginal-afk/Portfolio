@@ -36,7 +36,6 @@
   --text-primary: #FFFFFF;
   --text-muted: #A0A0A0;
   --text-subtle: #666666;
-  --wolf-opacity: 0.06;
   --gold-rgb: 212, 175, 55;
 }
 
@@ -51,7 +50,6 @@
   --text-primary: #1A1A1A;
   --text-muted: #555555;
   --text-subtle: #888888;
-  --wolf-opacity: 0.04;
   --gold-rgb: 184, 150, 12;
 }
 
@@ -137,16 +135,6 @@ body {
 
 .section-alt:nth-child(odd) {
   background-color: var(--bg-surface);
-}
-
-@keyframes wolfBreathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
-}
-
-@keyframes wolfRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 @keyframes heroCharReveal {

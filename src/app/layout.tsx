@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import WolfPreloader from "@/components/wolf-preloader";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -66,7 +65,6 @@ export default function RootLayout({
         }} />
       </head>
       <body className="min-h-full">
-        <WolfPreloader />
         <div className="noise-overlay" aria-hidden="true" />
         {children}
       </body>

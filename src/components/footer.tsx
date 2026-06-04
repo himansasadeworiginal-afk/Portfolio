@@ -45,15 +45,6 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-[#050505] overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <img
-          src="/Portfolio/logo1.png"
-          alt=""
-          className="absolute right-[-10%] top-1/2 -translate-y-1/2 h-full max-h-[700px] w-auto opacity-[0.08] object-contain"
-          style={{ animation: "wolfRotate 120s linear infinite" }}
-        />
-      </div>
-
       <div className="relative z-10">
         <div className="h-px bg-gold-primary/20 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-primary to-transparent animate-shimmer" style={{ backgroundSize: "200% 100%" }} />
@@ -79,19 +70,9 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-3">
-              <img
-                src="/Portfolio/logo1.png"
-                alt="Logo"
-                className="w-8 h-8 object-contain"
-              />
-              <div>
-                <span className="font-heading text-xl gold-gradient-text block leading-none">
-                  {portfolio.personal.initials}
-                </span>
-                <span className="font-body text-[10px] text-text-subtle uppercase tracking-[0.15em]">
-                  Front-End Developer
-                </span>
-              </div>
+              <span className="font-heading text-xl gold-gradient-text">
+                {portfolio.personal.initials}
+              </span>
             </div>
 
             <div className="flex items-center gap-6 flex-wrap justify-center">
