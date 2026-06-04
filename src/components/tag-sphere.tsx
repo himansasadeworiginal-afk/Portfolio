@@ -4,21 +4,17 @@ import { useEffect, useRef, useMemo, useState } from "react";
 import { portfolio } from "@/data/portfolio";
 import GlitchHeading from "@/components/glitch-heading";
 
-function getSkills() {
-  const all: { name: string; level: number; category: string }[] = [];
-  const cats: Record<string, string> = {
-    frontend: "Frontend",
-    backend: "Backend",
-    cms: "CMS & eCommerce",
-    devops: "Tools & DevOps",
-  };
-  for (const [key, skills] of Object.entries(portfolio.skills)) {
-    for (const s of skills) {
-      all.push({ ...s, category: cats[key] || key });
-    }
-  }
-  return all;
-}
+const tabs = [
+  { key: "frontend", label: "Frontend Craft" },
+  { key: "ai", label: "AI & Intelligent Tools" },
+  { key: "creative", label: "Creative & Design" },
+];
+
+const tabSummaries: Record<string, { count: number; desc: string }> = {
+  frontend: { count: 12, desc: "HTML, CSS, JS, React, Three.js & more" },
+  ai: { count: 7, desc: "AI integration, prompt engineering, APIs" },
+  creative: { count: 6, desc: "UI/UX, Figma, motion, brand identity" },
+};
 
 function fibonacciSphere(count: number, radius: number) {
   const points: { x: number; y: number; z: number }[] = [];
@@ -39,13 +35,9 @@ function fibonacciSphere(count: number, radius: number) {
 function SkillTag({
   name,
   level,
-  index,
-  total,
 }: {
   name: string;
   level: number;
-  index: number;
-  total: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -96,11 +88,10 @@ function SkillTag({
   );
 }
 
-function TagSphere() {
+function TagSphere({ skills: skillList }: { skills: readonly { readonly name: string; readonly level: number }[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
-  const skills = useMemo(() => getSkills().slice(0, 24), []);
-  const positions = useMemo(() => fibonacciSphere(skills.length, 280), [skills.length]);
+  const positions = useMemo(() => fibonacciSphere(skillList.length, 280), [skillList.length]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -130,6 +121,7 @@ function TagSphere() {
 
       tags.forEach((tag, i) => {
         const p = positions[i];
+        if (!p) return;
         const x = p.x * cosY - p.z * sinY;
         const z = p.x * sinY + p.z * cosY;
         const y = p.y * cosX - z * sinX;
@@ -177,32 +169,28 @@ function TagSphere() {
       cancelAnimationFrame(animId);
       container.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [positions]);
+  }, [positions, skillList.length]);
 
   return (
     <div
       ref={containerRef}
       className={`relative ${ready ? "w-full h-[500px]" : "hidden"}`}
     >
-      {skills.map((skill, i) => (
+      {skillList.map((skill) => (
         <SkillTag
           key={skill.name}
           name={skill.name}
           level={skill.level}
-          index={i}
-          total={skills.length}
         />
       ))}
     </div>
   );
 }
 
-function MobileSkillsGrid() {
-  const skills = useMemo(() => getSkills(), []);
-
+function MobileSkillsGrid({ skills: skillList }: { skills: readonly { readonly name: string; readonly level: number }[] }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-      {skills.map((skill) => (
+      {skillList.map((skill) => (
         <div
           key={skill.name}
           className="text-center"
@@ -224,42 +212,132 @@ function MobileSkillsGrid() {
   );
 }
 
+function CoreStrengths() {
+  return (
+    <div className="flex flex-wrap justify-center gap-3 mt-10">
+      {portfolio.coreStrengths?.map((strength) => (
+        <span
+          key={strength}
+          style={{
+            border: "1px solid rgba(212,175,55,0.4)",
+            background: "rgba(212,175,55,0.06)",
+            color: "#D4AF37",
+            borderRadius: "9999px",
+            padding: "8px 20px",
+            fontSize: "0.8rem",
+          }}
+          className="font-body"
+        >
+          {strength === "Fast Worker" && "⚡ "}
+          {strength === "Fast Learner" && "🧠 "}
+          {strength === "AI-Fluent" && "🤖 "}
+          {strength === "Detail-Obsessed" && "🎨 "}
+          {strength === "Wolf Industries" && "🐺 "}
+          {strength}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function SkillsSection() {
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const [activeTab, setActiveTab] = useState("frontend");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+
+  const currentSkills = portfolio.skills[activeTab as keyof typeof portfolio.skills] || [];
 
   return (
-    <section id="skills" className="py-24 bg-bg-primary">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="skills" className="py-24 bg-bg-primary relative overflow-hidden">
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          background: "repeating-linear-gradient(45deg, transparent, transparent 38px, rgba(212,175,55,0.03) 38px, rgba(212,175,55,0.03) 40px)",
+        }}
+      />
+      <div
+        className="absolute pointer-events-none z-0 select-none"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          fontSize: "clamp(80px, 15vw, 160px)",
+          fontFamily: "var(--font-playfair), serif",
+          color: "rgba(212,175,55,0.03)",
+          whiteSpace: "nowrap",
+        }}
+      >
+        EXPERTISE
+      </div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="font-body text-xs uppercase tracking-[0.2em] text-gold-primary">
             EXPERTISE
           </span>
           <GlitchHeading
-            text="Skills & Tech Stack"
+            text="Built Fast. Learned Faster."
             className="font-heading text-4xl gold-gradient-text mt-2"
           />
         </div>
 
+        {/* Tabs */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex bg-bg-elevated border border-border-subtle rounded-lg p-1">
+            {tabs.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className="font-body text-sm px-5 py-2.5 rounded-md transition-all duration-300"
+                style={
+                  activeTab === tab.key
+                    ? {
+                        background: "rgba(212,175,55,0.12)",
+                        color: "#D4AF37",
+                        boxShadow: "0 0 12px rgba(212,175,55,0.1)",
+                      }
+                    : {
+                        color: "var(--text-muted)",
+                        background: "transparent",
+                      }
+                }
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Sphere or Grid */}
-        {isMobile ? <MobileSkillsGrid /> : <TagSphere />}
+        <div key={activeTab}>
+          {isMobile ? <MobileSkillsGrid skills={currentSkills} /> : <TagSphere skills={currentSkills} />}
+        </div>
+
+        {/* Core Strengths Bar */}
+        <CoreStrengths />
 
         {/* Category Summary Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-          {[
-            { label: "Frontend Skills", count: 8, desc: "HTML, CSS, JS, React & more" },
-            { label: "Backend Skills", count: 7, desc: "PHP, Python, Node, DBs" },
-            { label: "CMS & eCommerce", count: 6, desc: "Shopify, WordPress, Figma" },
-            { label: "Dev Tools", count: 7, desc: "Git, Docker, Analytics, SEO" },
-          ].map((cat) => (
-            <div
-              key={cat.label}
-              className="bg-bg-elevated border border-border-subtle rounded-lg p-5 text-center hover:border-gold-primary/60 transition-all duration-300"
-            >
-              <span className="font-heading text-3xl gold-gradient-text">{cat.count}</span>
-              <p className="font-body text-sm text-gold-primary mt-1">{cat.label}</p>
-              <p className="font-body text-xs text-text-muted mt-1">{cat.desc}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
+          {tabs.map((tab) => {
+            const summary = tabSummaries[tab.key];
+            const skills = portfolio.skills[tab.key as keyof typeof portfolio.skills] || [];
+            return (
+              <div
+                key={tab.key}
+                className="bg-bg-elevated border border-border-subtle rounded-lg p-5 text-center hover:border-gold-primary/60 transition-all duration-300"
+                style={activeTab === tab.key ? { borderColor: "rgba(212,175,55,0.5)" } : {}}
+              >
+                <span className="font-heading text-3xl gold-gradient-text">{summary.count}</span>
+                <p className="font-body text-sm text-gold-primary mt-1">{tab.label}</p>
+                <p className="font-body text-xs text-text-muted mt-1">{summary.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

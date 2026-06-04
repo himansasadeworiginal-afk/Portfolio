@@ -44,7 +44,7 @@ import MagneticButton from "@/components/magnetic-button";
 
 export default function Home() {
   const prefersReduced = useReducedMotion();
-  const [scrambledText, setScrambledText] = useState("[YOUR NAME]");
+  const [scrambledText, setScrambledText] = useState("H. Sadew");
   const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [toast, setToast] = useState<{ visible: boolean; message: string }>({
     visible: false,
@@ -84,12 +84,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const roles = [
-    "Front-End Web Designer & Developer",
-    "Shopify Specialist",
-    "Full-Stack Engineer",
-    "UI/UX Enthusiast",
-  ];
+  const roles = portfolio.heroRoles;
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -151,7 +146,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-2 mb-8">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="font-body text-xs uppercase tracking-[0.2em] text-gold-primary">
-                AVAILABLE FOR WORK
+                WOLF INDUSTRIES · AVAILABLE FOR PROJECTS
               </span>
             </div>
 
@@ -227,18 +222,101 @@ export default function Home() {
         <SectionDivider />
 
         {/* ABOUT */}
-        <SectionWrapper id="about" className="py-24 bg-bg-surface">
-          <div className="max-w-7xl mx-auto px-6">
+        <SectionWrapper id="about" className="py-24 bg-bg-surface relative overflow-hidden">
+          <div
+            className="absolute inset-0 pointer-events-none z-0"
+            style={{
+              backgroundImage: "radial-gradient(circle, rgba(212,175,55,0.07) 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <svg
+            viewBox="0 0 280 280"
+            className="absolute pointer-events-none z-0"
+            style={{
+              bottom: "-40px",
+              right: "-60px",
+              width: "320px",
+              height: "320px",
+              opacity: 0.04,
+              filter: "grayscale(1) sepia(1) hue-rotate(5deg) saturate(3)",
+              animation: "breathe 6s ease-in-out infinite",
+            }}
+          >
+            <path d="M140 40 L110 15 L95 55 L105 70 Z" fill="#D4AF37" />
+            <path d="M140 40 L170 15 L185 55 L175 70 Z" fill="#D4AF37" />
+            <path d="M70 100 Q60 70 45 85 Q40 95 55 110 L75 105 Z" fill="#D4AF37" />
+            <path d="M210 100 Q220 70 235 85 Q240 95 225 110 L205 105 Z" fill="#D4AF37" />
+            <path d="M60 130 Q30 120 20 145 Q15 165 35 175 L55 165 Z" fill="#D4AF37" />
+            <path d="M220 130 Q250 120 260 145 Q265 165 245 175 L225 165 Z" fill="#D4AF37" />
+            <path d="M65 170 Q50 190 55 210 Q65 225 85 215" fill="#D4AF37" />
+            <path d="M215 170 Q230 190 225 210 Q215 225 195 215" fill="#D4AF37" />
+            <path d="M80 85 Q100 65 140 60 Q180 65 200 85 Q220 110 225 145 Q225 175 215 200 Q200 225 170 235 Q155 240 140 240 Q125 240 110 235 Q80 225 65 200 Q55 175 55 145 Q55 110 80 85 Z" fill="#D4AF37" />
+            <path d="M140 240 Q140 250 125 255 Q110 250 110 240" fill="#D4AF37" />
+            <path d="M140 240 Q140 250 155 255 Q170 250 170 240" fill="#D4AF37" />
+            <path d="M125 255 Q130 260 140 262 Q150 260 155 255" fill="#D4AF37" />
+            <path d="M95 120 Q110 110 125 118" fill="#D4AF37" />
+            <path d="M185 120 Q170 110 155 118" fill="#D4AF37" />
+            <path d="M140 242 L140 255" fill="#D4AF37" />
+            <path d="M105 140 Q115 130 127 140" fill="#D4AF37" />
+            <path d="M175 140 Q165 130 153 140" fill="#D4AF37" />
+          </svg>
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                  <div className="relative w-[400px] h-[500px] max-w-full mx-auto">
-                    <Image src={portfolio.personal.profileImage} alt={portfolio.personal.name} width={400} height={500} className="w-full h-full object-cover rounded-xl" unoptimized loading="lazy" />
+                <div className="relative w-[400px] h-[500px] max-w-full mx-auto">
+                  <Image src={portfolio.personal.profileImage} alt={portfolio.personal.name} width={400} height={500} className="w-full h-full object-cover rounded-xl" unoptimized loading="lazy" />
                   <div className="absolute -top-1 -left-1 w-[calc(100%+8px)] h-[calc(100%+8px)] rounded-xl border-2 border-transparent pointer-events-none">
                     <div className="absolute -top-[2px] -left-[2px] w-16 h-16 border-t-2 border-l-2 border-gold-primary rounded-tl-[14px]" />
                     <div className="absolute -top-[2px] -right-[2px] w-16 h-16 border-t-2 border-r-2 border-gold-primary rounded-tr-[14px]" />
                     <div className="absolute -bottom-[2px] -left-[2px] w-16 h-16 border-b-2 border-l-2 border-gold-primary rounded-bl-[14px]" />
                     <div className="absolute -bottom-[2px] -right-[2px] w-16 h-16 border-b-2 border-r-2 border-gold-primary rounded-br-[14px]" />
                   </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "-20px",
+                      right: "-20px",
+                      width: "160px",
+                      height: "160px",
+                      borderRadius: "50%",
+                      background: "radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%)",
+                      pointerEvents: "none",
+                    }}
+                  />
+                  <svg
+                    width="140"
+                    height="140"
+                    viewBox="0 0 280 280"
+                    style={{
+                      position: "absolute",
+                      bottom: "-20px",
+                      right: "-20px",
+                      width: "140px",
+                      height: "140px",
+                      opacity: 0.92,
+                      filter: "drop-shadow(0 0 20px rgba(212,175,55,0.6))",
+                      pointerEvents: "none",
+                    }}
+                  >
+                    <path d="M140 40 L110 15 L95 55 L105 70 Z" fill="#D4AF37" />
+                    <path d="M140 40 L170 15 L185 55 L175 70 Z" fill="#D4AF37" />
+                    <path d="M70 100 Q60 70 45 85 Q40 95 55 110 L75 105 Z" fill="#D4AF37" />
+                    <path d="M210 100 Q220 70 235 85 Q240 95 225 110 L205 105 Z" fill="#D4AF37" />
+                    <path d="M60 130 Q30 120 20 145 Q15 165 35 175 L55 165 Z" fill="#D4AF37" />
+                    <path d="M220 130 Q250 120 260 145 Q265 165 245 175 L225 165 Z" fill="#D4AF37" />
+                    <path d="M65 170 Q50 190 55 210 Q65 225 85 215" fill="#D4AF37" />
+                    <path d="M215 170 Q230 190 225 210 Q215 225 195 215" fill="#D4AF37" />
+                    <path d="M80 85 Q100 65 140 60 Q180 65 200 85 Q220 110 225 145 Q225 175 215 200 Q200 225 170 235 Q155 240 140 240 Q125 240 110 235 Q80 225 65 200 Q55 175 55 145 Q55 110 80 85 Z" fill="#D4AF37" />
+                    <path d="M140 240 Q140 250 125 255 Q110 250 110 240" fill="#D4AF37" />
+                    <path d="M140 240 Q140 250 155 255 Q170 250 170 240" fill="#D4AF37" />
+                    <path d="M125 255 Q130 260 140 262 Q150 260 155 255" fill="#D4AF37" />
+                    <path d="M95 120 Q110 110 125 118" fill="#D4AF37" />
+                    <path d="M185 120 Q170 110 155 118" fill="#D4AF37" />
+                    <path d="M140 242 L140 255" fill="#D4AF37" />
+                    <path d="M105 140 Q115 130 127 140" fill="#D4AF37" />
+                    <path d="M175 140 Q165 130 153 140" fill="#D4AF37" />
+                  </svg>
                 </div>
 
                 <div className="flex justify-center gap-12 mt-8">
@@ -252,16 +330,20 @@ export default function Home() {
                 <span className="font-body text-xs uppercase tracking-[0.2em] text-gold-primary">
                   ABOUT ME
                 </span>
+                <h2 className="font-heading text-4xl gold-gradient-text mt-2 mb-1 text-left">
+                  {portfolio.personal.name}
+                </h2>
+                <p className="font-body text-xs uppercase tracking-[0.15em] text-gold-primary mb-6" style={{ fontSize: "13px", letterSpacing: "0.15em" }}>
+                  {portfolio.personal.companyLabel}
+                </p>
                 <GlitchHeading
                   text="Crafting Digital Experiences That Matter"
-                  className="font-heading text-4xl gold-gradient-text mt-2 mb-6 text-left"
+                  className="font-heading text-3xl gold-gradient-text mt-2 mb-6 text-left"
                 />
 
-                {portfolio.personal.bio.map((paragraph, i) => (
-                  <p key={i} className="font-body text-text-muted leading-relaxed mb-4">
-                    {paragraph}
-                  </p>
-                ))}
+                <p className="font-body text-text-muted leading-relaxed mb-4">
+                  {portfolio.personal.bio}
+                </p>
 
                 <ul className="space-y-2 mb-8">
                   {portfolio.personal.keyFacts.map((fact) => (
@@ -302,8 +384,78 @@ export default function Home() {
         <SectionDivider />
 
         {/* EXPERIENCE */}
-        <SectionWrapper id="experience" className="py-24 bg-bg-primary">
-          <div className="max-w-5xl mx-auto px-6">
+        <SectionWrapper id="experience" className="py-24 bg-bg-primary relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-[60px] h-full pointer-events-none z-0 opacity-[0.05]" aria-hidden="true">
+            <svg width="60" height="100%" viewBox="0 0 60 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style={{ height: "100%" }}>
+              <line x1="30" y1="0" x2="30" y2="200" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="10" y1="20" x2="30" y2="20" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="50" y1="40" x2="30" y2="40" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="10" y1="60" x2="30" y2="60" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="50" y1="80" x2="30" y2="80" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="10" y1="100" x2="30" y2="100" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="50" y1="120" x2="30" y2="120" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="10" y1="140" x2="30" y2="140" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="50" y1="160" x2="30" y2="160" stroke="#D4AF37" strokeWidth="1" />
+              <rect x="28" y="18" width="4" height="4" fill="#D4AF37" />
+              <rect x="48" y="38" width="4" height="4" fill="#D4AF37" />
+              <rect x="8" y="58" width="4" height="4" fill="#D4AF37" />
+              <rect x="48" y="78" width="4" height="4" fill="#D4AF37" />
+              <rect x="8" y="98" width="4" height="4" fill="#D4AF37" />
+              <rect x="48" y="118" width="4" height="4" fill="#D4AF37" />
+              <rect x="8" y="138" width="4" height="4" fill="#D4AF37" />
+              <rect x="48" y="158" width="4" height="4" fill="#D4AF37" />
+            </svg>
+          </div>
+          <div className="absolute top-0 right-0 w-[60px] h-full pointer-events-none z-0 opacity-[0.05]" aria-hidden="true">
+            <svg width="60" height="100%" viewBox="0 0 60 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style={{ height: "100%" }}>
+              <line x1="30" y1="0" x2="30" y2="200" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="10" y1="30" x2="30" y2="30" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="50" y1="50" x2="30" y2="50" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="10" y1="70" x2="30" y2="70" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="50" y1="90" x2="30" y2="90" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="10" y1="110" x2="30" y2="110" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="50" y1="130" x2="30" y2="130" stroke="#D4AF37" strokeWidth="1" />
+              <line x1="10" y1="150" x2="30" y2="150" stroke="#D4AF37" strokeWidth="1" />
+              <rect x="28" y="28" width="4" height="4" fill="#D4AF37" />
+              <rect x="48" y="48" width="4" height="4" fill="#D4AF37" />
+              <rect x="8" y="68" width="4" height="4" fill="#D4AF37" />
+              <rect x="48" y="88" width="4" height="4" fill="#D4AF37" />
+              <rect x="8" y="108" width="4" height="4" fill="#D4AF37" />
+              <rect x="48" y="128" width="4" height="4" fill="#D4AF37" />
+              <rect x="8" y="148" width="4" height="4" fill="#D4AF37" />
+            </svg>
+          </div>
+          <svg
+            viewBox="0 0 280 280"
+            className="absolute pointer-events-none z-0"
+            style={{
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+              width: "260px",
+              height: "260px",
+              opacity: 0.03,
+            }}
+          >
+            <path d="M140 40 L110 15 L95 55 L105 70 Z" fill="#D4AF37" />
+            <path d="M140 40 L170 15 L185 55 L175 70 Z" fill="#D4AF37" />
+            <path d="M70 100 Q60 70 45 85 Q40 95 55 110 L75 105 Z" fill="#D4AF37" />
+            <path d="M210 100 Q220 70 235 85 Q240 95 225 110 L205 105 Z" fill="#D4AF37" />
+            <path d="M60 130 Q30 120 20 145 Q15 165 35 175 L55 165 Z" fill="#D4AF37" />
+            <path d="M220 130 Q250 120 260 145 Q265 165 245 175 L225 165 Z" fill="#D4AF37" />
+            <path d="M65 170 Q50 190 55 210 Q65 225 85 215" fill="#D4AF37" />
+            <path d="M215 170 Q230 190 225 210 Q215 225 195 215" fill="#D4AF37" />
+            <path d="M80 85 Q100 65 140 60 Q180 65 200 85 Q220 110 225 145 Q225 175 215 200 Q200 225 170 235 Q155 240 140 240 Q125 240 110 235 Q80 225 65 200 Q55 175 55 145 Q55 110 80 85 Z" fill="#D4AF37" />
+            <path d="M140 240 Q140 250 125 255 Q110 250 110 240" fill="#D4AF37" />
+            <path d="M140 240 Q140 250 155 255 Q170 250 170 240" fill="#D4AF37" />
+            <path d="M125 255 Q130 260 140 262 Q150 260 155 255" fill="#D4AF37" />
+            <path d="M95 120 Q110 110 125 118" fill="#D4AF37" />
+            <path d="M185 120 Q170 110 155 118" fill="#D4AF37" />
+            <path d="M140 242 L140 255" fill="#D4AF37" />
+            <path d="M105 140 Q115 130 127 140" fill="#D4AF37" />
+            <path d="M175 140 Q165 130 153 140" fill="#D4AF37" />
+          </svg>
+          <div className="max-w-5xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
               <span className="font-body text-xs uppercase tracking-[0.2em] text-gold-primary">
                 CAREER JOURNEY
@@ -361,16 +513,16 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <div className="inline-block bg-bg-elevated border border-border-subtle rounded-lg p-6">
-                <p className="font-body text-xs text-gold-primary uppercase tracking-[0.1em] mb-1">
-                  {portfolio.education.period}
-                </p>
+            <div className="flex justify-center mt-12">
+              <div style={{ borderLeft: "3px solid #D4AF37", background: "rgba(212,175,55,0.04)", borderRadius: "8px", padding: "20px 24px", maxWidth: "480px", textAlign: "left" }}>
                 <h3 className="font-heading text-lg gold-gradient-text">
-                  {portfolio.education.degree}
+                  {portfolio.education.title}
                 </h3>
-                <p className="font-body text-sm text-text-muted">
-                  {portfolio.education.school}
+                <p className="font-body text-xs text-gold-primary uppercase tracking-[0.1em] mt-1 mb-2">
+                  {portfolio.education.subtitle}
+                </p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">
+                  {portfolio.education.description}
                 </p>
               </div>
             </div>
@@ -384,12 +536,36 @@ export default function Home() {
         <SectionDivider />
 
         {/* SERVICES */}
-        <SectionWrapper id="services" className="py-24 bg-bg-surface">
-          <div className="max-w-7xl mx-auto px-6">
+        <SectionWrapper id="services" className="py-24 bg-bg-surface relative overflow-hidden">
+          <div
+            className="absolute inset-0 pointer-events-none z-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52' viewBox='0 0 60 52'%3E%3Cpath d='M30 0 L60 15 L60 37 L30 52 L0 37 L0 15 Z' fill='none' stroke='%23D4AF37' stroke-width='1' opacity='0.04'/%3E%3C/svg%3E")`,
+              backgroundSize: "60px 52px",
+            }}
+          />
+          <div
+            className="absolute pointer-events-none z-0 select-none"
+            style={{
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+              fontSize: "clamp(80px, 15vw, 160px)",
+              fontFamily: "var(--font-playfair), serif",
+              color: "rgba(212,175,55,0.03)",
+              whiteSpace: "nowrap",
+            }}
+          >
+            SERVICES
+          </div>
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
               <span className="font-body text-xs uppercase tracking-[0.2em] text-gold-primary">
                 WHAT I DO
               </span>
+              <p className="font-body text-xs uppercase tracking-[0.2em] text-gold-primary/70 mt-2">
+                Delivered under the Wolf Industries banner — built with precision, speed, and intelligence.
+              </p>
               <GlitchHeading
                 text="End-to-End Web Development Services"
                 className="font-heading text-4xl gold-gradient-text mt-2"
@@ -424,8 +600,26 @@ export default function Home() {
         <SectionDivider />
 
         {/* TESTIMONIALS */}
-        <SectionWrapper id="testimonials" className="py-24 bg-bg-primary">
-          <div className="max-w-5xl mx-auto px-6">
+        <SectionWrapper id="testimonials" className="py-24 bg-bg-primary relative overflow-hidden">
+          <div
+            className="absolute inset-0 pointer-events-none z-0"
+            style={{
+              background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(212,175,55,0.05) 0%, transparent 70%)",
+            }}
+          />
+          <div
+            className="absolute pointer-events-none z-0 select-none leading-none"
+            style={{
+              top: "-100px",
+              left: "-20px",
+              fontSize: "500px",
+              fontFamily: "var(--font-playfair), serif",
+              color: "rgba(212,175,55,0.025)",
+            }}
+          >
+            &ldquo;
+          </div>
+          <div className="max-w-5xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
               <span className="font-body text-xs uppercase tracking-[0.2em] text-gold-primary">
                 KIND WORDS
@@ -444,7 +638,43 @@ export default function Home() {
 
         {/* CONTACT */}
         <SectionWrapper id="contact" className="py-24 bg-bg-surface relative overflow-hidden">
-
+          <div
+            className="absolute inset-0 pointer-events-none z-0"
+            style={{
+              background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(212,175,55,0.06) 0%, transparent 60%)",
+            }}
+          />
+          <svg
+            viewBox="0 0 280 280"
+            className="absolute pointer-events-none z-0"
+            style={{
+              top: "50%",
+              right: "-80px",
+              transform: "translateY(-50%)",
+              width: "400px",
+              height: "400px",
+              opacity: 0.04,
+              animation: "slowSpin 120s linear infinite",
+            }}
+          >
+            <path d="M140 40 L110 15 L95 55 L105 70 Z" fill="#D4AF37" />
+            <path d="M140 40 L170 15 L185 55 L175 70 Z" fill="#D4AF37" />
+            <path d="M70 100 Q60 70 45 85 Q40 95 55 110 L75 105 Z" fill="#D4AF37" />
+            <path d="M210 100 Q220 70 235 85 Q240 95 225 110 L205 105 Z" fill="#D4AF37" />
+            <path d="M60 130 Q30 120 20 145 Q15 165 35 175 L55 165 Z" fill="#D4AF37" />
+            <path d="M220 130 Q250 120 260 145 Q265 165 245 175 L225 165 Z" fill="#D4AF37" />
+            <path d="M65 170 Q50 190 55 210 Q65 225 85 215" fill="#D4AF37" />
+            <path d="M215 170 Q230 190 225 210 Q215 225 195 215" fill="#D4AF37" />
+            <path d="M80 85 Q100 65 140 60 Q180 65 200 85 Q220 110 225 145 Q225 175 215 200 Q200 225 170 235 Q155 240 140 240 Q125 240 110 235 Q80 225 65 200 Q55 175 55 145 Q55 110 80 85 Z" fill="#D4AF37" />
+            <path d="M140 240 Q140 250 125 255 Q110 250 110 240" fill="#D4AF37" />
+            <path d="M140 240 Q140 250 155 255 Q170 250 170 240" fill="#D4AF37" />
+            <path d="M125 255 Q130 260 140 262 Q150 260 155 255" fill="#D4AF37" />
+            <path d="M95 120 Q110 110 125 118" fill="#D4AF37" />
+            <path d="M185 120 Q170 110 155 118" fill="#D4AF37" />
+            <path d="M140 242 L140 255" fill="#D4AF37" />
+            <path d="M105 140 Q115 130 127 140" fill="#D4AF37" />
+            <path d="M175 140 Q165 130 153 140" fill="#D4AF37" />
+          </svg>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">

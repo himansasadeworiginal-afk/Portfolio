@@ -258,6 +258,36 @@ export default function HorizontalProjects() {
       className="relative overflow-hidden bg-bg-surface"
       ref={sectionRef}
     >
+      {/* WI Monogram Watermark */}
+      <div
+        className="absolute pointer-events-none z-0 select-none leading-none"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          fontSize: "clamp(200px, 35vw, 400px)",
+          fontFamily: "var(--font-playfair), serif",
+          color: "rgba(212,175,55,0.025)",
+          lineHeight: 1,
+        }}
+      >
+        WI
+      </div>
+
+      {/* Corner Brackets */}
+      <svg className="absolute top-0 left-0 pointer-events-none z-0" width="60" height="60" viewBox="0 0 60 60">
+        <path d="M0 0 L60 0 L60 8 L8 8 L8 60 L0 60 Z" fill="rgba(212,175,55,0.08)" />
+      </svg>
+      <svg className="absolute top-0 right-0 pointer-events-none z-0" width="60" height="60" viewBox="0 0 60 60">
+        <path d="M60 0 L0 0 L0 8 L52 8 L52 60 L60 60 Z" fill="rgba(212,175,55,0.08)" />
+      </svg>
+      <svg className="absolute bottom-0 left-0 pointer-events-none z-0" width="60" height="60" viewBox="0 0 60 60">
+        <path d="M0 60 L60 60 L60 52 L8 52 L8 0 L0 0 Z" fill="rgba(212,175,55,0.08)" />
+      </svg>
+      <svg className="absolute bottom-0 right-0 pointer-events-none z-0" width="60" height="60" viewBox="0 0 60 60">
+        <path d="M60 60 L0 60 L0 52 L52 52 L52 0 L60 0 Z" fill="rgba(212,175,55,0.08)" />
+      </svg>
+
       {/* Eyebrow + Heading */}
       <div className="pt-16 pb-8 px-6 text-center">
         <span className="font-body text-xs uppercase tracking-[0.2em] text-gold-primary">

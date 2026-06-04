@@ -69,9 +69,20 @@ export default function Footer() {
 
         <div className="max-w-7xl mx-auto px-6 py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-3">
-              <span className="font-heading text-xl gold-gradient-text">
-                {portfolio.personal.initials}
+            <div className="flex flex-col items-start">
+              <div className="flex items-center gap-3">
+                <span className="font-heading text-xl gold-gradient-text">
+                  {portfolio.personal.initials}
+                </span>
+                <span className="font-heading text-sm text-text-primary">
+                  {portfolio.personal.name}
+                </span>
+              </div>
+              <span
+                className="font-body"
+                style={{ fontSize: "10px", letterSpacing: "0.2em", color: "#D4AF37", opacity: 0.6, textTransform: "uppercase" }}
+              >
+                WOLF INDUSTRIES
               </span>
             </div>
 
@@ -120,7 +131,7 @@ export default function Footer() {
 
           <div className="mt-8 pt-6 border-t border-border-subtle/50 text-center">
             <p className="font-body text-xs text-text-subtle">
-              &copy; {year} {portfolio.personal.name}. Crafted with precision.
+              &copy; 2025 Wolf Industries &middot; H. Sadew. All rights reserved.
             </p>
           </div>
         </div>

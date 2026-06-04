@@ -1,11 +1,11 @@
 const techItems = [
-  "HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js",
-  "Vue.js", "PHP", "Python", "Shopify", "REST APIs", "MySQL",
+  "HTML5", "CSS3", "JavaScript", "React", "Next.js",
+  "AI Integration", "Prompt Engineering", "Wolf Industries", "Web Animation", "Three.js", "UI/UX Design",
 ];
 
 const achievementItems = [
-  "5 Years Experience", "50+ Projects", "Performance Obsessed",
-  "Clean Code", "Pixel Perfect", "SEO Expert", "Shopify Certified",
+  "5 Years Experience", "50+ Projects", "Fast Worker", "AI-Fluent",
+  "Self-Taught", "Wolf Industries", "Detail-Obsessed",
 ];
 
 function MarqueeRow({

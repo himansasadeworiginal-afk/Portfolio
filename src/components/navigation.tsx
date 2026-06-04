@@ -42,10 +42,21 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a
             href="#"
-            className="flex items-center gap-3 group"
+            className="flex flex-col items-start group"
           >
-            <span className="font-heading text-xl gold-gradient-text">
-              {portfolio.personal.initials}
+            <div className="flex items-center gap-3">
+              <span className="font-heading text-xl gold-gradient-text">
+                {portfolio.personal.initials}
+              </span>
+              <span className="font-heading text-sm text-text-primary">
+                {portfolio.personal.name}
+              </span>
+            </div>
+            <span
+              className="font-body"
+              style={{ fontSize: "11px", letterSpacing: "0.2em", color: "#D4AF37", opacity: 0.7, textTransform: "uppercase" }}
+            >
+              WOLF INDUSTRIES
             </span>
           </a>
 

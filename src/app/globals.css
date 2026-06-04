@@ -201,6 +201,16 @@ body {
   50% { transform: translateX(-2px); }
 }
 
+@keyframes slowSpin {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

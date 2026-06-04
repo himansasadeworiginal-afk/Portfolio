@@ -37,7 +37,7 @@ export const caseStudies: CaseStudy[] = [
       { title: "Launch & Optimisation", description: "Deployed with staged rollout, monitored Core Web Vitals, and iterated based on real user data." },
     ],
     testimonial: {
-      quote: "Working with Alex transformed our online store. Our conversion rate jumped 35% in the first month after the redesign. The attention to detail and performance optimisation was remarkable.",
+      quote: "Working with Sadew transformed our online store. Our conversion rate jumped 35% in the first month after the redesign. The attention to detail and performance optimisation was remarkable.",
       author: "Sarah Mitchell",
       company: "CEO, Luxora Fashion",
     },
@@ -67,7 +67,7 @@ export const caseStudies: CaseStudy[] = [
       { title: "Testing & Deployment", description: "Ran parallel testing with the legacy system for 2 weeks before full cutover, ensuring zero data loss." },
     ],
     testimonial: {
-      quote: "Alex delivered a complex booking platform on time and under budget. The codebase is clean, well-documented, and has been rock-solid in production handling thousands of daily users.",
+      quote: "Sadew delivered a complex booking platform on time and under budget. The codebase is clean, well-documented, and has been rock-solid in production handling thousands of daily users.",
       author: "James Rodrigo",
       company: "CTO, ZenSpa Group",
     },

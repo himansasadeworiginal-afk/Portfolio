@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
+import PreloaderWrapper from "@/components/PreloaderWrapper";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -22,25 +23,25 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://himansasadeworiginal-afk.github.io/Portfolio"),
-  title: "K. Himansa Sadew Aloka — Front-End Web Designer & Developer",
+  title: "H. Sadew — Creative Director of Wolf Industries",
   description:
-    "Front-End Developer with 5+ years of freelance experience building modern, responsive, and interactive websites. Specializing in Shopify, React, and custom web development.",
+    "Creative Director of Wolf Industries. Building fast, intelligent, and visually stunning web experiences with AI integration.",
   icons: {
     icon: "/Portfolio/favicon.svg",
   },
   openGraph: {
-    title: "K. Himansa Sadew Aloka — Front-End Web Designer & Developer",
+    title: "H. Sadew — Creative Director of Wolf Industries",
     description:
-      "Front-End Developer with 5+ years of experience building modern, responsive websites and eCommerce solutions.",
+      "Creative Director of Wolf Industries. Building fast, intelligent, and visually stunning web experiences with AI integration.",
     type: "website",
     locale: "en_US",
     images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "K. Himansa Sadew Aloka — Front-End Web Designer & Developer",
+    title: "H. Sadew — Creative Director of Wolf Industries",
     description:
-      "Front-End Developer with 5+ years of experience building modern, responsive websites and eCommerce solutions.",
+      "Creative Director of Wolf Industries. Building fast, intelligent, and visually stunning web experiences with AI integration.",
     images: ["/og-image.svg"],
   },
 };
@@ -66,7 +67,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full">
         <div className="noise-overlay" aria-hidden="true" />
-        {children}
+        <PreloaderWrapper>{children}</PreloaderWrapper>
       </body>
     </html>
   );
