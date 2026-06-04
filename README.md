@@ -1,6 +1,6 @@
 # Portfolio — H. Sadew
 
-**Live:** [himansasadeworiginal-afk.github.io/Portfolio](https://himansasadeworiginal-afk.github.io/Portfolio/)
+**Live:** [himansasadeworiginal-afk.github.io/Portfolio](https://himansasadeworiginal-afk.github.io/Portfolio/) *(v3.0 deployed)*
 
 Personal portfolio website for **H. Sadew**, Creative Director of **Wolf Industries**. Built with Next.js 16, TypeScript, Tailwind CSS v4, Three.js, Framer Motion, and GSAP.
 
@@ -51,9 +51,16 @@ Static export goes to `out/`.
 Pushing to `main` triggers GitHub Actions to build and deploy to GitHub Pages.
 The workflow is defined in `.github/workflows/deploy.yml`.
 
+### Configuration Placeholders
+
+Before going live with your own domain/contact info, replace these in `src/data/portfolio.ts`:
+- `email`, `phone`, `github`, `linkedin` — currently set to `[YOUR ...]` markers
+
 ## Data
 
 All content is managed in `src/data/portfolio.ts`. Case study content in `src/data/caseStudies.ts`. Process steps in `src/data/process.ts`.
+
+> **Note:** Some fields in `src/data/portfolio.ts` contain `[YOUR ...]` placeholders (email, phone, GitHub, LinkedIn). Replace these with your actual info before finalizing.
 
 ## Project Structure
 
@@ -102,3 +109,4 @@ src/
 | 7 | Services: 6 new services | `portfolio.ts` | ✓ |
 | 8 | Remove all Shopify/PHP/backend/degree references | Global cleanup | ✓ |
 | 9 | `portfolio.ts` full rewrite | Data | ✓ |
+| 10 | Deployed to GitHub Pages via GH Actions | `main` branch | ✓ |
